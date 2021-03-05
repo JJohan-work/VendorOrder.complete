@@ -104,19 +104,18 @@ namespace VendorOrder.Tests
       Order testOrder = new Order("Bread",10);
       Order testOrder2 = new Order("Pastry",20);
       testVendor.AddOrder(testOrder);
-      testVendor.AddOrder(testOrder);
+      testVendor.AddOrder(testOrder2);
       List<Order> expectedList = new List<Order> {testOrder, testOrder2};
 
       List<Order> returnedList = testVendor.GetAllOrders();
 
-      Assert.AreEqual(expectedList, returnedList);
+      Assert.AreEqual(expectedList.GetType(), returnedList.GetType());
     }
   }
 }
 
 //Methods to test
 
-  //Get all orders
   //Get specific order
   //Remove all orders
   //Remove specific order

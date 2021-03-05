@@ -43,14 +43,13 @@ namespace VendorOrder.Models
 
     public List<Order> GetAllOrders()
     {
-
-      return new List<Order> {};
+      return Orders;
     }
   }
 }
 
 //Functions to add
-  //Get all orders
   //Get specific order
   //Remove all orders
   //Remove specific order
+  //Calculate Balance
