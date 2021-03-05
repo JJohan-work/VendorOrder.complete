@@ -45,7 +45,10 @@ namespace VendorOrder.Models
     {
       return Orders;
     }
-
+    public Order GetOrder(int id)
+    {
+      return Orders[id-1];
+    }
 
   }
 }
