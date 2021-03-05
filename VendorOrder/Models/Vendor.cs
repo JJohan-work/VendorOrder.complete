@@ -33,8 +33,7 @@ namespace VendorOrder.Models
 
     public static List<Vendor> GetAll()
     {
-      List<Vendor> vendorOut = new List<Vendor> {};
-      return vendorOut;
+      return _instances;
     }
   }
 }

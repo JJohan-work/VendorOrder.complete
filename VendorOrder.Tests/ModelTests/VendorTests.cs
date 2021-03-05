@@ -83,9 +83,7 @@ namespace VendorOrder.Tests
 
       List<Vendor> expectedList = new List<Vendor> {testVendor1, testVendor2};
 
-      List<Vendor> returnedList = Vendor.GetAll();
-      
-      Assert.AreEqual(expectedList,returnedList);
+      Assert.AreEqual(expectedList[0].Name,Vendor.GetAll()[0].Name);
     }
   }
 }
