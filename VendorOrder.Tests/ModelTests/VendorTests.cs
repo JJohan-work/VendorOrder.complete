@@ -12,7 +12,13 @@ namespace VendorOrder.Tests
     {
       Vendor.ClearAll();
     }
+    
+    [TestMethod]
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("VendorCo","VendorDesc");
 
-
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
   }
 }
