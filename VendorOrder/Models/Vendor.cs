@@ -60,5 +60,4 @@ namespace VendorOrder.Models
 
 //Functions to add
   //Remove all orders
-  //Remove specific order
   //Calculate Balance
