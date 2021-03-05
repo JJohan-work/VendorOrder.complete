@@ -51,6 +51,10 @@ namespace VendorOrder.Models
       return Orders[id-1];
     }
 
+    public void RemoveOrder(int id)
+    {
+      Orders.RemoveAt(id-1);
+    }
   }
 }
 
