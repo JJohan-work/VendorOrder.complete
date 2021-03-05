@@ -64,6 +64,7 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(expectedBalance, returnedBalance);
     }
+
     [TestMethod]
     public void Find_ReturnsVendorObjectById_Vendor()
     {
@@ -73,14 +74,26 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(testVendor, returnedVendor);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsListOfVendorObjects_VendorList()
+    {
+      Vendor testVendor1 = new Vendor("VendorCo1", "VendorDesc1");
+      Vendor testVendor2 = new Vendor("VendorCo2", "VendorDesc2");
+
+      List<Vendor> expectedList = new List<Vendor> {testVendor1, testVendor2};
+
+      List<Vendor> returnedList = Vendor.GetAll();
+      
+      Assert.AreEqual(expectedList,returnedList);
+    }
   }
 }
 
 //Methods to test
 
   //Calculate Balance
-  //Find Category
-  //Get all Categories
+  //Get all Vendors
   //Get all orders
   //Get specific order
   //Add order

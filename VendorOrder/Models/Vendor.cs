@@ -30,12 +30,17 @@ namespace VendorOrder.Models
     {
       return _instances[id - 1];
     }
+
+    public static List<Vendor> GetAll()
+    {
+      List<Vendor> vendorOut = new List<Vendor> {};
+      return vendorOut;
+    }
   }
 }
 
 //Functions to add
-  //Find Category
-  //Get all Categories
+  //Get all Vendors
   //Get all orders
   //Get specific order
   //Add order
