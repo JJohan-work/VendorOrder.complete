@@ -26,3 +26,12 @@ namespace VendorOrder.Models
     }
   }
 }
+
+//Functions to add
+  //Find Category
+  //Get all Categories
+  //Get all orders
+  //Get specific order
+  //Add order
+  //Remove all orders
+  //Remove specific order

@@ -43,6 +43,27 @@ namespace VendorOrder.Tests
       Assert.AreEqual(testDesc,result);
     }
 
-    
+    [TestMethod]
+    public void GetId_ReturnsId_int()
+    {
+      int expectedId = 1;
+      Vendor testVendor = new Vendor("VendorCo","VendorDesc");
+
+      int returnedId = testVendor.Id;
+
+      Assert.AreEqual(expectedId, returnedId);
+    }
   }
 }
+
+//Methods to test
+  //Get Balance
+
+  //Calculate Balance
+  //Find Category
+  //Get all Categories
+  //Get all orders
+  //Get specific order
+  //Add order
+  //Remove all orders
+  //Remove specific order
