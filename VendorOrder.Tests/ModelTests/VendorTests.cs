@@ -90,12 +90,26 @@ namespace VendorOrder.Tests
     public void AddOrder_AddsOrderToVendorOrders_void()
     {
       Vendor testVendor = new Vendor("VendorCo", "VendorDesc");
-
       Order testOrder = new Order("Bread",10);
 
       testVendor.AddOrder(testOrder);
 
       Assert.AreEqual(testOrder, testVendor.Orders[0]);
+    }
+
+    [TestMethod]
+    public void GetAllOrders_ReturnsAllOrdersInVendorOrder_OrderList()
+    {
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10);
+      Order testOrder2 = new Order("Pastry",20);
+      testVendor.AddOrder(testOrder);
+      testVendor.AddOrder(testOrder);
+      List<Order> expectedList = new List<Order> {testOrder, testOrder2};
+
+      List<Order> returnedList = testVendor.GetAllOrders();
+
+      Assert.AreEqual(expectedList, returnedList);
     }
   }
 }
@@ -104,7 +118,6 @@ namespace VendorOrder.Tests
 
   //Get all orders
   //Get specific order
-  //Add order
   //Remove all orders
   //Remove specific order
   //Calculate Balance

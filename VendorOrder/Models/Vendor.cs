@@ -40,12 +40,17 @@ namespace VendorOrder.Models
     {
       Orders.Add(newOrder);
     }
+
+    public List<Order> GetAllOrders()
+    {
+
+      return new List<Order> {};
+    }
   }
 }
 
 //Functions to add
   //Get all orders
   //Get specific order
-  //Add order
   //Remove all orders
   //Remove specific order
