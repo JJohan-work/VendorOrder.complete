@@ -90,10 +90,9 @@ namespace VendorOrder.Tests
 
 //Methods to test
 
-  //Calculate Balance
-  //Get all Vendors
   //Get all orders
   //Get specific order
   //Add order
   //Remove all orders
   //Remove specific order
+  //Calculate Balance

@@ -39,7 +39,6 @@ namespace VendorOrder.Models
 }
 
 //Functions to add
-  //Get all Vendors
   //Get all orders
   //Get specific order
   //Add order
