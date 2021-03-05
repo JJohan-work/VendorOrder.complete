@@ -32,6 +32,17 @@ namespace VendorOrder.Tests
       Assert.AreEqual(name,result);
     }
 
+    [TestMethod]
+    public void GetDesc_ReturnsDescription_String()
+    {
+      string testDesc = "VendorDesc";
+      Vendor testVendor = new Vendor("VendorCo",testDesc);
+
+      string result = testVendor.Desc;
+
+      Assert.AreEqual(testDesc,result);
+    }
+
     
   }
 }
