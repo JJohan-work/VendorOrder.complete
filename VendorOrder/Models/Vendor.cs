@@ -8,7 +8,8 @@ namespace VendorOrder.Models
     private static List<Vendor> _instances = new List<Vendor> {};
     public string Name { get; set; }
     public string Desc { get; set; }
-    public int Id { get; }
+    public int Balance { get; private set;} = 0;
+    public int Id { get; private set;}
     public List<Order> Orders { get; set; }
 
     public Vendor(string name, string desc)

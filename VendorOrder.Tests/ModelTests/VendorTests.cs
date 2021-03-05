@@ -53,6 +53,17 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(expectedId, returnedId);
     }
+
+    [TestMethod]
+    public void GetBalance_ReturnsBalanceOfVendor_int()
+    {
+      int expectedBalance = 0;
+      Vendor testVendor = new Vendor("VendorCo", "VendorDesc");
+
+      int returnedBalance = testVendor.Balance;
+
+      Assert.AreEqual(expectedBalance, returnedBalance);
+    }
   }
 }
 
