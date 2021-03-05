@@ -111,6 +111,18 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(expectedList.GetType(), returnedList.GetType());
     }
+
+    [TestMethod]
+    public void GetOrder_ReturnsSpecificOrderById_Order()
+    {
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10);
+      testVendor.AddOrder(testOrder);
+
+      Order returnedOrder = testVendor.GetOrder(1);
+
+      Assert.AreEqual(returnedOrder,testOrder);
+    }
   }
 }
 
