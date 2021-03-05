@@ -123,12 +123,21 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(returnedOrder,testOrder);
     }
+    public void RemoveOrder_RemovesSpecificOrderById_Void()
+    {
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10);
+      testVendor.AddOrder(testOrder);
+
+      testVendor.RemoveOrder(1);
+
+      Assert.AreEqual(testVendor.Orders.Count,0);
+    }
   }
 }
 
 //Methods to test
 
-  //Get specific order
   //Remove all orders
   //Remove specific order
   //Calculate Balance

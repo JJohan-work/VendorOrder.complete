@@ -45,6 +45,7 @@ namespace VendorOrder.Models
     {
       return Orders;
     }
+
     public Order GetOrder(int id)
     {
       return Orders[id-1];
@@ -54,7 +55,6 @@ namespace VendorOrder.Models
 }
 
 //Functions to add
-  //Get specific order
   //Remove all orders
   //Remove specific order
   //Calculate Balance
