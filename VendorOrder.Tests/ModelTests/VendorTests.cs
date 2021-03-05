@@ -85,6 +85,18 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(expectedList[0].Name,Vendor.GetAll()[0].Name);
     }
+
+    [TestMethod]
+    public void AddOrder_AddsOrderToVendorOrders_void()
+    {
+      Vendor testVendor = new Vendor("VendorCo", "VendorDesc");
+
+      Order testOrder = new Order("Bread",10);
+
+      testVendor.AddOrder(testOrder);
+
+      Assert.AreEqual(testOrder, testVendor.Orders[0]);
+    }
   }
 }
 

@@ -35,6 +35,11 @@ namespace VendorOrder.Models
     {
       return _instances;
     }
+
+    public void AddOrder(Order newOrder)
+    {
+      Orders.Add(newOrder);
+    }
   }
 }
 
