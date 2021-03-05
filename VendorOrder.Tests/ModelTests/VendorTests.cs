@@ -12,7 +12,7 @@ namespace VendorOrder.Tests
     {
       Vendor.ClearAll();
     }
-    
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -20,5 +20,18 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    [TestMethod]
+    public void Getname_ReturnsName_String()
+    {
+      string name = "VendorCo";
+      Vendor testVendor = new Vendor(name, "VendorDesc");
+
+      string result = testVendor.Name;
+
+      Assert.AreEqual(name,result);
+    }
+
+    
   }
 }
