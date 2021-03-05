@@ -64,11 +64,19 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(expectedBalance, returnedBalance);
     }
+    [TestMethod]
+    public void Find_ReturnsVendorObjectById_Vendor()
+    {
+      Vendor testVendor = new Vendor("VendorCo", "VendorDesc");
+
+      Vendor returnedVendor = Vendor.Find(1);
+
+      Assert.AreEqual(testVendor, returnedVendor);
+    }
   }
 }
 
 //Methods to test
-  //Get Balance
 
   //Calculate Balance
   //Find Category
