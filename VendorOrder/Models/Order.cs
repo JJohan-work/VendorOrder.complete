@@ -8,6 +8,7 @@ namespace VendorOrder.Models
     private static List<Order> _instances = new List<Order> {};
 
     public int Id { get; private set; }
+    public int VendorId {get; private set;}
     public string Type { get; private set; }
     public int Amount { get; private set; }
     public DateTime OrderPlaced { get; private set; }
@@ -27,6 +28,11 @@ namespace VendorOrder.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
     }
   }
 }

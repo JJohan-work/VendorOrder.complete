@@ -55,9 +55,13 @@ namespace VendorOrder.Models
     {
       Orders.RemoveAt(id-1);
     }
+
+    public void RemoveAllOrders()
+    {
+      Orders.Clear();
+    }
   }
 }
 
 //Functions to add
-  //Remove all orders
   //Calculate Balance

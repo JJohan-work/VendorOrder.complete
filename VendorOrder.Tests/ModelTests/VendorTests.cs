@@ -148,6 +148,4 @@ namespace VendorOrder.Tests
 }
 
 //Methods to test
-
-  //Remove all orders
   //Calculate Balance

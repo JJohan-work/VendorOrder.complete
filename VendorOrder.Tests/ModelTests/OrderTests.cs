@@ -65,13 +65,13 @@ namespace VendorOrder.Tests
     // }
 
     // [TestMethod]
-    // public void GetPayed_ReturnsBoolOfOrderPaymentStatus_bool()
+    // public void SetPayed_SetsBoolOfOrderPaymentStatus_void()
     // {
 
     // }
 
     // [TestMethod]
-    // public void GetFulfilled_ReturnsBoolOfOrderFulfilledStatus_bool()
+    // public void SetFulfilled_SetsBoolOfOrderFulfilledStatus_void()
     // {
 
     // }
