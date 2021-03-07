@@ -6,7 +6,7 @@ namespace VendorOrder.Models
   public class Order
   {
     private static List<Order> _instances = new List<Order> {};
-
+    public int GlobalId { get; private set; }
     public int Id { get; private set; }
     public int VendorId {get; private set;}
     public string Type { get; private set; }
@@ -23,6 +23,7 @@ namespace VendorOrder.Models
       Amount = amount;
       _instances.Add(this);
       Id = Vendor.Find(vendorId).Orders.Count+1;
+      GlobalId = _instances.Count;
       VendorId = vendorId;
     }
 
@@ -38,6 +39,11 @@ namespace VendorOrder.Models
     public static void RemoveOrder(int Id)
     {
       _instances.RemoveAt(Id-1);
+
+      for (int i = 0; i < _instances.Count; i++)
+      {
+        _instances[i].GlobalId = i+1;
+      }
     }
 
     public void Changeid(int newId)

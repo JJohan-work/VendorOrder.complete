@@ -35,10 +35,10 @@
       <div class="col-1">Completed</div>
       <div class="col-1"></div>
       <div class="col-1">
-        <form action="/Vendor/@Model[i].VendorId/Order/@Model[i].Id" method="post">
+        <form action="/Vendor/@Model[i].VendorId/Order/@Model[i].Id/Delete" method="post">
           <input type="hidden" name="backUrl" value="/Orders">
           <input type="hidden" name="orderPlace" value="@(i+1)">
-          <button type="submit">Cancel Order</button>
+          <button type="submit">Cancel</button>
         </form>
       </div>
     </div>

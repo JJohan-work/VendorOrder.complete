@@ -1,3 +1,48 @@
+@using VendorOrder.Models;
+
 @{
   Layout = "_Layout";
 }
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col">Order Info</div>
+      </div>
+      <div class="row">
+        <div class="col-8">@Vendor.Find(Model.VendorId).Name</div>
+        <div class="col-4">@Model.Id</div>
+      </div>
+    </div>
+    <div class="col-4">
+      <form action="" method="post">
+        <button type="submit">Pay</button>
+      </form>
+      <form action="" method="post">
+        <button type="submit">Complete</button>
+      </form>
+        <form action="/Vendor/@Model.VendorId/Order/@Model.Id/Delete" method="post">
+          <input type="hidden" name="backUrl" value="/Orders">
+          <input type="hidden" name="orderPlace" value="@Model.GlobalId">
+          <button type="submit">Cancel</button>
+        </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-8">@Model.Type</div>
+        <div class="col-4">@Model.Amount</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+    <div class="col-8">Order Total Cost:</div>
+    <div class="col-4">$0.00</div>
+      </div>
+    </div>
+  </div>
+</div>

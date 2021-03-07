@@ -45,7 +45,7 @@ namespace VendorOrder.Controllers
         return View(Id);
       }
 
-      [HttpPost("/Vendor/{VendId}/Order/{Id}")]
+      [HttpPost("/Vendor/{VendId}/Order/{Id}/Delete")]
       public ActionResult Destroy(int VendId, int Id, string backUrl, string orderPlace)
       {
         Console.WriteLine("destroying object");
