@@ -5,14 +5,18 @@
 <h1>Add Order to Vendor @Model.Name</h1>
 
 <form action="/Vendor/@Model.Id/Orders" method="post">
+  <div class="form-group">
   <label for="Type">Type of Baked Good</label>
-  <select name="Type" id="Type">
-    <option value="Bread">Bread</option>
-    <option value="Pastry">Pastry</option>
-  </select>
-  <label for="Amount">Amount to Order</label>
-  <input type="number" id="Amount" name="Amount" min="0">
-  <button type="submit">Add Order</button>
+    <select name="Type" id="Type" class="form-control">
+      <option value="Bread">Bread</option>
+      <option value="Pastry">Pastry</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Amount">Amount to Order</label>
+    <input type="number" id="Amount" name="Amount" min="0">
+  </div>
+  <button type="submit" class="btn btn-primary">Add Order</button>
 </form>
 
-<h4><a href="/Vendor/@Model.Id/Orders">Cancel</a></h4>
+<h4><a href="/Vendor/@Model.Id/Orders" class="btn btn-danger">Cancel</a></h4>
