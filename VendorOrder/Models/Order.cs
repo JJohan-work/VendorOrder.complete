@@ -35,5 +35,9 @@ namespace VendorOrder.Models
     {
       return _instances;
     }
+    public static void RemoveOrder(int Id)
+    {
+      _instances.RemoveAt(Id-1);
+    }
   }
 }

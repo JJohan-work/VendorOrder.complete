@@ -43,5 +43,12 @@ namespace VendorOrder.Controllers
         vendor.AddOrder(newOrder);
         return View(Id);
       }
+
+      [HttpPost("/Vendor/{VendId}/Order/{Id}")]
+      public ActionResult Destroy(int VendId, int Id)
+      {
+        
+        return RedirectToAction("Show",new {VendId, Id});
+      }
     }
 }
