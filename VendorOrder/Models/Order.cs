@@ -22,7 +22,7 @@ namespace VendorOrder.Models
       Type = type;
       Amount = amount;
       _instances.Add(this);
-      Id = _instances.Count;
+      Id = Vendor.Find(vendorId).Orders.Count+1;
       VendorId = vendorId;
     }
 
@@ -38,6 +38,11 @@ namespace VendorOrder.Models
     public static void RemoveOrder(int Id)
     {
       _instances.RemoveAt(Id-1);
+    }
+
+    public void Changeid(int newId)
+    {
+      Id = newId;
     }
   }
 }

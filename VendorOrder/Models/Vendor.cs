@@ -51,9 +51,15 @@ namespace VendorOrder.Models
       return Orders[id-1];
     }
 
-    public void RemoveOrder(int id)
+    public void RemoveOrder(int id, int OrderPlace)
     {
       Orders.RemoveAt(id-1);
+      Order.RemoveOrder(OrderPlace);
+
+      for (int i=0; i < Orders.Count; i++)
+      {
+        Orders[i].Changeid(i+1);
+      }
     }
 
     public void RemoveAllOrders()

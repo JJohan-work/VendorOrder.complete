@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using VendorOrder.Models;
 
@@ -45,10 +46,12 @@ namespace VendorOrder.Controllers
       }
 
       [HttpPost("/Vendor/{VendId}/Order/{Id}")]
-      public ActionResult Destroy(int VendId, int Id)
+      public ActionResult Destroy(int VendId, int Id, string backUrl, string orderPlace)
       {
-        
-        return RedirectToAction("Show",new {VendId, Id});
+        Console.WriteLine("destroying object");
+        Console.WriteLine($"Vendor:{VendId} Id:{Id} Place:{orderPlace}");
+        Vendor.Find(VendId).RemoveOrder(Id,Int32.Parse(orderPlace));
+        return Redirect(backUrl);
       }
     }
 }
