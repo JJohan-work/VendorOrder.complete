@@ -53,6 +53,20 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(expectedAmount, returnedAmount);
     }
+
+    [TestMethod]
+    public void RemoveOrder_RemovesOrderAtId_void()
+    {
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      Order testOrder2 = new Order("Pastry",20,testVendor.Id);
+      testVendor.AddOrder(testOrder);
+      testVendor.AddOrder(testOrder2);
+
+      Order.RemoveOrder(1);
+
+      Assert.AreEqual(Order.GetAll()[0],testOrder2);
+    }
   }
 }
 
