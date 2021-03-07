@@ -3,13 +3,41 @@
 @{
   Layout = "_Layout";
 }
+<div class="container">
+  @if (Model.Count == 0)
+  {
+    <div class="row">No Active Orders have been placed</div>
+  }
+  else
+  {
+  <div class="row">
+    <div class="col-1">ID</div>
+    <div class="col-3">Vendor</div>
+    <div class="col-2">Type</div>
+    <div class="col-2">Amount</div>
+    <div class="col-1">Payed</div>
+    <div class="col-1">Completed</div>
+    <div class="col-1"></div>
+    <div class="col-1">Cancel</div>
+  </div>
+  }
 
-@if (Model.Count == 0)
-{
-  <h3>No Active Orders have been placed</h3>
-}
+  @foreach (Order order in Model)
+  {
+    <div class="row">
+      <div class="col-1">
+        <a href="vendor/@order.VendorId/order/@order.Id">@order.VendorId : @order.Id</a>
+      </div>
+      <div class="col-3">@Vendor.Find(order.VendorId).Name</div>
+      <div class="col-2">@order.Type</div>
+      <div class="col-2">@order.Amount</div>
+      <div class="col-1">Payed</div>
+      <div class="col-1">Completed</div>
+      <div class="col-1"></div>
+      <div class="col-1">Cancel</div>
+    </div>
+  }
 
-@foreach (Order order in Model)
-{
-  <h3><a href="vendor/@order.VendorId/order/@order.Id"></a></h3>
-}
+</div>
+
+
