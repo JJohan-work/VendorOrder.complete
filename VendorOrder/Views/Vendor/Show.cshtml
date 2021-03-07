@@ -4,20 +4,41 @@
   Layout = "_Layout";
 }
 
-<h3>@Model.Name</h3>
-<p>@Model.Desc</p>
-<p>Outstanding Balance: $@Model.Balance.00</p>
 
-@if (Model.GetAllOrders().Count == 0)
-{
-  <h3>@Model.Name has placed no orders</h3>
-}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>@Model.Name</h3>
+      <p>Outstanding Balance: $@Model.Balance.00</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      @if (Model.GetAllOrders().Count == 0)
+      {
+        <div class="col-md-12">@Model.Name has placed no orders</div>
+      }
 
-@foreach (Order order in Model.GetAllOrders())
-{
-  <h3>Type: @order.Type Amount: @order.Amount</h3>
-}
+      @foreach (Order order in Model.GetAllOrders())
+      {
+        <div class="col-md-12">Type: @order.Type Amount: @order.Amount</div>
+      }
+    </div>
+    <div class="col-md-4">
+      @Model.Desc;
+    </div>
+  </div>
+  <div class="row">
+    <h4><a href="/Vendor/@Model.Id/Orders">Add/Edit Orders</a></h4>
 
-<h4><a href="/Vendor/@Model.Id/Orders">Add/Edit Orders</a></h4>
+    <h4><a href="/Vendors">Back</a></h4>
+  </div>
+</div>
 
-<h4><a href="/Vendors">Back</a></h4>
+
+
+
+
+
+
+

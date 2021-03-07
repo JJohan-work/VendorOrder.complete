@@ -29,10 +29,19 @@ namespace VendorOrder.Controllers
         return View(Vendor);
       }
 
-      [HttpGet("/Vendors/{VendId}/Order/New")]
+      [HttpGet("/Vendor/{VendId}/Order/New")]
       public ActionResult New(int vendId)
       {
-        return View(vendId);
+        return View(Vendor.Find(vendId));
+      }
+
+      [HttpPost("/Vendor/{Id}/Orders")]
+      public ActionResult Create(int Id, string Type, int Amount)
+      {
+        Vendor vendor = Vendor.Find(Id);
+        Order newOrder = new Order(Type, Amount);
+        vendor.AddOrder(newOrder);
+        return View(Id);
       }
     }
 }
