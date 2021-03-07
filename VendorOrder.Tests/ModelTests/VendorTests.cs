@@ -90,7 +90,7 @@ namespace VendorOrder.Tests
     public void AddOrder_AddsOrderToVendorOrders_void()
     {
       Vendor testVendor = new Vendor("VendorCo", "VendorDesc");
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,testVendor.Id);
 
       testVendor.AddOrder(testOrder);
 
@@ -101,8 +101,8 @@ namespace VendorOrder.Tests
     public void GetAllOrders_ReturnsAllOrdersInVendorOrder_OrderList()
     {
       Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
-      Order testOrder = new Order("Bread",10);
-      Order testOrder2 = new Order("Pastry",20);
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      Order testOrder2 = new Order("Pastry",20,testVendor.Id);
       testVendor.AddOrder(testOrder);
       testVendor.AddOrder(testOrder2);
       List<Order> expectedList = new List<Order> {testOrder, testOrder2};
@@ -116,7 +116,7 @@ namespace VendorOrder.Tests
     public void GetOrder_ReturnsSpecificOrderById_Order()
     {
       Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,testVendor.Id);
       testVendor.AddOrder(testOrder);
 
       Order returnedOrder = testVendor.GetOrder(1);
@@ -126,7 +126,7 @@ namespace VendorOrder.Tests
     public void RemoveOrder_RemovesSpecificOrderById_Void()
     {
       Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,testVendor.Id);
       testVendor.AddOrder(testOrder);
 
       testVendor.RemoveOrder(1);
@@ -137,7 +137,7 @@ namespace VendorOrder.Tests
     public void RemoveAllOrders_RemovesAllOrdersInVendor_Void()
     {
       Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,testVendor.Id);
       testVendor.AddOrder(testOrder);
 
       testVendor.RemoveAllOrders();

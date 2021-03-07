@@ -16,7 +16,7 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,0);
 
       Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
@@ -24,7 +24,7 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetType_ReturnsTypeOfOrder_string()
     {
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,0);
       string expectedType = "Bread";
 
       string returnedType = testOrder.Type;
@@ -35,7 +35,7 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetId_ReturnsIdOfOrder_int()
     {
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,0);
       int expectedId = 1;
 
       int returnedId = testOrder.Id;
@@ -46,7 +46,7 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetAmount_ReturnsAmountofOrder_int()
     {
-      Order testOrder = new Order("Bread",10);
+      Order testOrder = new Order("Bread",10,0);
       int expectedAmount = 10;
 
       int returnedAmount = testOrder.Amount;
