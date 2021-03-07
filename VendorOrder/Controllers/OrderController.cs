@@ -39,7 +39,7 @@ namespace VendorOrder.Controllers
       public ActionResult Create(int Id, string Type, int Amount)
       {
         Vendor vendor = Vendor.Find(Id);
-        Order newOrder = new Order(Type, Amount);
+        Order newOrder = new Order(Type, Amount, Id);
         vendor.AddOrder(newOrder);
         return View(Id);
       }

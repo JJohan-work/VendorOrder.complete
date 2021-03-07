@@ -17,12 +17,13 @@ namespace VendorOrder.Models
     public bool Payed { get; private set; } = false;
     public bool Fulfilled { get; private set; } = false;
 
-    public Order(string type, int amount)
+    public Order(string type, int amount, int vendorId)
     {
       Type = type;
       Amount = amount;
       _instances.Add(this);
       Id = _instances.Count;
+      VendorId = vendorId;
     }
 
     public static void ClearAll()
