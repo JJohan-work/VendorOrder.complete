@@ -4,29 +4,58 @@
   Layout = "_Layout";
 }
 
-<div class="row">
-  <div class="col-8">
-    <h4>Registered Vendors</h4>
-  </div>
-  <div class="col-4">
-    <h4><a href="/Vendor/New" class="btn btn-primary">Add Vendor</a></h4>
-  </div>
-</div>
-
-@if (Model.Count == 0)
-{
-  <h3>No Vendors have Currently Registered</h3>
-}
-
-@foreach (Vendor vendor in Model)
-{
+<div class="container">
   <div class="row">
     <div class="col-8">
-      <h3><a href="/Vendor/@vendor.Id">@vendor.Name</a></h3>
+      <h4>Registered Vendors</h4>
+    </div>
+    <div class="col-4">
+      <h4><a href="/Vendor/New" class="btn btn-primary">Add Vendor</a></h4>
     </div>
   </div>
-}
 
+  @if (Model.Count == 0)
+  {
+    <h3>No Vendors have Currently Registered</h3>
+  }
+  else
+  {
+    <div class="row">
+      <div class="col-8">
+        <h3>Registered Vendors</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <h3>Vendor Name</h3>
+      </div>
+      <div class="col-2">
+        <h3>Number of Orders</h3>
+      </div>
+      <div class="col-2">
+        <h3>Owed Balance</h3>
+      </div>
+    </div>
+  }
+  @foreach (Vendor vendor in Model)
+  {
+    <div class="row">
+      <div class="col-4">
+        <h3>@vendor.Name</h3>
+      </div>
+      <div class="col-2">
+        <h3>@vendor.Orders.Count</h3>
+      </div>
+      <div class="col-2">
+        <h3>@vendor.Balance</h3>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-2">
+        <a href="/Vendor/@vendor.Id" class="btn btn-primary">View Vendor</a>
+      </div>
+    </div>
+  }
+</div>
 
 
 

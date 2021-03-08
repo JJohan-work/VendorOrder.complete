@@ -5,6 +5,11 @@
   margin-right: 5vw;
 }
 
+form {
+  width:50vw !important;
+  align-content: center;
+}
+
 #footer {
   position: absolute;
   bottom:0;
