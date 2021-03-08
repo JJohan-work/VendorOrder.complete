@@ -32,11 +32,17 @@
       <div class="col-1">
         @if (Model[i].Payed)
         {
-          <a href="vendor/@Model[i].VendorId/Order/@Model[i].Id/Pay" class="btn btn-success">Payed</a>
+          <form action="Vendor/@Model[i].VendorId/Order/@Model[i].Id/Pay" method="post">
+            <input type="hidden" name="backUrl" value="/Orders">
+            <button type="submit"class="btn btn-success">Payed</button>
+          </form>
         }
         else
         {
-          <a href="vendor/@Model[i].VendorId/Order/@Model[i].Id/Pay" class="btn btn-warning">Unpayed</a>
+          <form action="Vendor/@Model[i].VendorId/Order/@Model[i].Id/Pay" method="post">
+            <input type="hidden" name="backUrl" value="/Orders">
+            <button type="submit"class="btn btn-warning">Unpayed</button>
+          </form>
         }
       </div>
       <div class="col-1">
