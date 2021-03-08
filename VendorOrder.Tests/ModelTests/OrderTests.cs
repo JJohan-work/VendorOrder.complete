@@ -86,7 +86,7 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(testOrder.Payed,true);
     }
-
+    
     [TestMethod]
     public void ToggleFulfill_TogglesFulfilledStatus_void()
     {
