@@ -55,5 +55,10 @@ namespace VendorOrder.Models
     {
       Payed = !Payed;
     }
+
+    public void ToggleFulfill()
+    {
+      Fulfilled = !Fulfilled;
+    }
   }
 }
