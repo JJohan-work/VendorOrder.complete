@@ -15,8 +15,8 @@
       <div class="col-3">Vendor</div>
       <div class="col-2">Type</div>
       <div class="col-2">Amount</div>
-      <div class="col-1">Payed</div>
-      <div class="col-1">Completed</div>
+      <div class="col-1">Payment</div>
+      <div class="col-1">Status</div>
     </div>
   }
 
@@ -29,8 +29,26 @@
       <div class="col-3">@Vendor.Find(Model[i].VendorId).Name</div>
       <div class="col-2">@Model[i].Type</div>
       <div class="col-2">@Model[i].Amount</div>
-      <div class="col-1">Payed</div>
-      <div class="col-1">Completed</div>
+      <div class="col-1">
+        @if (Model[i].Payed)
+        {
+          <a href="vendor/@Model[i].VendorId/order/@Model[i].Id/Pay" class="btn btn-success">Payed</a>
+        }
+        else
+        {
+          <a href="vendor/@Model[i].VendorId/order/@Model[i].Id/Pay" class="btn btn-warning">Unpayed</a>
+        }
+      </div>
+      <div class="col-1">
+        @if (Model[i].Fulfilled)
+        {
+          <a href="vendor/@Model[i].VendorId/order/@Model[i].Id/Fulfill" class="btn btn-success">Complete</a>
+        }
+        else
+        {
+          <a href="vendor/@Model[i].VendorId/order/@Model[i].Id/Fulfill" class="btn btn-warning">Uncomplete</a>
+        }
+      </div>
       <div class="col-1"></div>
       <div class="col-1">
         <form action="/Vendor/@Model[i].VendorId/Order/@Model[i].Id/Delete" method="post">

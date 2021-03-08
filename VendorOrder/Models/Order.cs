@@ -50,5 +50,10 @@ namespace VendorOrder.Models
     {
       Id = newId;
     }
+
+    public void TogglePayment()
+    {
+      Payed = !Payed;
+    }
   }
 }

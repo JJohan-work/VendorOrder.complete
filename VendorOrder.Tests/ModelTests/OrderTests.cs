@@ -86,6 +86,18 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(testOrder.Payed,true);
     }
+
+    [TestMethod]
+    public void ToggleFulfill_TogglesFulfilledStatus_void()
+    {
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      testVendor.AddOrder(testOrder);
+
+      testOrder.ToggleFulfill();
+
+      Assert.AreEqual(testOrder.Fulfilled,true);
+    }
   }
 }
 
