@@ -129,7 +129,7 @@ namespace VendorOrder.Tests
       Order testOrder = new Order("Bread",10,testVendor.Id);
       testVendor.AddOrder(testOrder);
 
-      testVendor.RemoveOrder(1);
+      testVendor.RemoveOrder(1,1);
 
       Assert.AreEqual(testVendor.Orders.Count,0);
     }

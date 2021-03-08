@@ -16,7 +16,9 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order testOrder = new Order("Bread",10,0);
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      testVendor.AddOrder(testOrder);
 
       Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
@@ -24,7 +26,9 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetType_ReturnsTypeOfOrder_string()
     {
-      Order testOrder = new Order("Bread",10,0);
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      testVendor.AddOrder(testOrder);
       string expectedType = "Bread";
 
       string returnedType = testOrder.Type;
@@ -35,7 +39,9 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetId_ReturnsIdOfOrder_int()
     {
-      Order testOrder = new Order("Bread",10,0);
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      testVendor.AddOrder(testOrder);
       int expectedId = 1;
 
       int returnedId = testOrder.Id;
@@ -46,7 +52,8 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetAmount_ReturnsAmountofOrder_int()
     {
-      Order testOrder = new Order("Bread",10,0);
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
       int expectedAmount = 10;
 
       int returnedAmount = testOrder.Amount;
@@ -66,6 +73,18 @@ namespace VendorOrder.Tests
       Order.RemoveOrder(1);
 
       Assert.AreEqual(Order.GetAll()[0],testOrder2);
+    }
+
+    [TestMethod]
+    public void TogglePayment_TogglesPayedStatus_void()
+    {
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      testVendor.AddOrder(testOrder);
+
+      testOrder.TogglePayment();
+
+      Assert.AreEqual(testOrder.Payed,true);
     }
   }
 }
