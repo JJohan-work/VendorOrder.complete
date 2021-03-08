@@ -53,5 +53,11 @@ namespace VendorOrder.Controllers
         Vendor.Find(VendId).RemoveOrder(Id,Int32.Parse(orderPlace));
         return Redirect(backUrl);
       }
+      [HttpPost("/Vendor/{VendId}/Order/{Id}/Fulfill")]
+      public ActionResult Fulfill(int VendId, int Id, string backUrl)
+      {
+        Vendor.Find(VendId).GetOrder(Id).ToggleFulfill();
+        return Redirect(backUrl);
+      }
     }
 }
