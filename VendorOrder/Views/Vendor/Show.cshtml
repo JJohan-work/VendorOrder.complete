@@ -7,9 +7,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-8">
       <h3>@Model.Name</h3>
       <p>Outstanding Balance: $@Model.Balance.00</p>
+    </div>
+    <div class="col-4">
+      <div class="row">
+        <a href="/Vendor/@Model.Id/Orders" class="btn btn-primary">Add/Edit Orders</a>
+        <a href="/Vendors" class="btn btn-danger">Back</a>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -18,19 +24,46 @@
       {
         <div class="col-md-12">@Model.Name has placed no orders</div>
       }
-
-      @foreach (Order order in Model.GetAllOrders())
+      else
       {
-        <div class="col-md-12">Type: @order.Type Amount: @order.Amount</div>
+        <div class="row">
+          <div class="col-1">ID</div>
+          <div class="col-2">Vendor</div>
+          <div class="col-2">Type</div>
+          <div class="col-2">Amount</div>
+          <div class="col-1">Payed</div>
+          <div class="col-2">Completed</div>
+        </div>
+      }
+
+      @for(int i = 0; i < Model.GetAllOrders().Count; i++)
+      {
+        Order order = Model.GetAllOrders()[i];
+        if (Model.Id == order.VendorId)
+        {
+          <div class="row listItem">
+            <div class="col-1">
+              <a href="vendor/@order.VendorId/order/@order.Id">@order.VendorId : @order.Id</a>
+            </div>
+            <div class="col-2">@Vendor.Find(order.VendorId).Name</div>
+            <div class="col-2">@order.Type</div>
+            <div class="col-2">@order.Amount</div>
+            <div class="col-1">Payed</div>
+            <div class="col-2">Completed</div>
+            <div class="col-2">
+              <form action="/Vendor/@order.VendorId/Order/@order.Id/Delete" method="post">
+                <input type="hidden" name="backUrl" value="/Vendor/@Model.Id/Orders">
+                <input type="hidden" name="orderPlace" value="@(i+1)">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        }
       }
     </div>
     <div class="col-md-4">
-      @Model.Desc;
+      @Model.Desc
     </div>
-  </div>
-  <div class="row">
-    <a href="/Vendor/@Model.Id/Orders" class="btn btn-primary">Add/Edit Orders</a>
-    <a href="/Vendors" class="btn btn-danger">Back</a>
   </div>
 </div>
 

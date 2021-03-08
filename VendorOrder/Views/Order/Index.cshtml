@@ -11,14 +11,12 @@
   else
   {
     <div class="row">
-      <div class="col-1">ID</div>
+      <div class="col-1"></div>
       <div class="col-3">Vendor</div>
       <div class="col-2">Type</div>
       <div class="col-2">Amount</div>
       <div class="col-1">Payed</div>
       <div class="col-1">Completed</div>
-      <div class="col-1"></div>
-      <div class="col-1">Cancel</div>
     </div>
   }
 
@@ -26,7 +24,7 @@
   {
     <div class="row listItem">
       <div class="col-1">
-        <a href="vendor/@Model[i].VendorId/order/@Model[i].Id">@Model[i].VendorId : @Model[i].Id</a>
+        <a href="vendor/@Model[i].VendorId/order/@Model[i].Id" class="btn btn-primary">View</a>
       </div>
       <div class="col-3">@Vendor.Find(Model[i].VendorId).Name</div>
       <div class="col-2">@Model[i].Type</div>
@@ -38,7 +36,7 @@
         <form action="/Vendor/@Model[i].VendorId/Order/@Model[i].Id/Delete" method="post">
           <input type="hidden" name="backUrl" value="/Orders">
           <input type="hidden" name="orderPlace" value="@(i+1)">
-          <button type="submit">Delete</button>
+          <button type="submit" class="btn btn-danger">Delete</button>
         </form>
       </div>
     </div>
