@@ -4,7 +4,7 @@
 
 <h1>Add Order to Vendor @Model.Name</h1>
 
-<form action="/Vendor/@Model.Id/Orders" method="post">
+<form action="/Vendor/@Model.Id/Orders" method="post" class="creationForm">
   <div class="form-group">
   <label for="Type">Type of Baked Good</label>
     <select name="Type" id="Type" class="form-control">
@@ -14,7 +14,7 @@
   </div>
   <div class="form-group">
     <label for="Amount">Amount to Order</label>
-    <input type="number" id="Amount" name="Amount" min="0">
+    <input type="number" id="Amount" name="Amount" min="1">
   </div>
   <button type="submit" class="btn btn-primary">Add Order</button>
 </form>
