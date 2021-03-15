@@ -14,7 +14,9 @@ This is for epicodus C# week 2 friday project. The program keeps track of vendor
 ## Technologies Used
 
 * _C#_
-* _.Net Core 5.0_
+* _.Net 5.0_
+* _ASP.NET core_
+* _M.S. Test_
 * _Git and Github_
 * _VS Code_
 
@@ -22,7 +24,7 @@ This is for epicodus C# week 2 friday project. The program keeps track of vendor
 
 ## Setup/Installation Requirements
 
-.Net Core v5.0 is required to build and execute this program from its downloaded state.
+.Net v5.0 is required to build and execute this program from its downloaded state.
 
 * Download Repo from github or clone using ```git clone {gitURL}```
 * Open terminal and navigate to VendorOrder.complete/VendorOrder.Tests

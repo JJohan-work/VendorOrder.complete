@@ -48,8 +48,6 @@ namespace VendorOrder.Controllers
       [HttpPost("/Vendor/{VendId}/Order/{Id}/Delete")]
       public ActionResult Destroy(int VendId, int Id, string backUrl, string orderPlace)
       {
-        Console.WriteLine("destroying object");
-        Console.WriteLine($"Vendor:{VendId} Id:{Id} Place:{orderPlace}");
         Vendor.Find(VendId).RemoveOrder(Id,Int32.Parse(orderPlace));
         return Redirect(backUrl);
       }

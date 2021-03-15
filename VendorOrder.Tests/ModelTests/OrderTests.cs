@@ -98,25 +98,18 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(testOrder.Fulfilled,true);
     }
+
+    [TestMethod]
+    public void Changeid_ChangesIdToGivenId_void()
+    {
+      int expectedId = 3;
+      Vendor testVendor = new Vendor("VendorCo1", "VendorDesc1");
+      Order testOrder = new Order("Bread",10,testVendor.Id);
+      testVendor.AddOrder(testOrder);
+
+      testOrder.Changeid(expectedId);
+
+      Assert.AreEqual(testOrder.Id, expectedId);
+    }
   }
 }
-
-
-
-    // [TestMethod]
-    // public void GetOrder_ReturnsOrderSpecifiedById_Order()
-    // {
-
-    // }
-
-    // [TestMethod]
-    // public void SetPayed_SetsBoolOfOrderPaymentStatus_void()
-    // {
-
-    // }
-
-    // [TestMethod]
-    // public void SetFulfilled_SetsBoolOfOrderFulfilledStatus_void()
-    // {
-
-    // }
